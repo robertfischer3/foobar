@@ -1,0 +1,16 @@
+# Project files and stuff.
+ve/
+__pycache__
+*.egg-info
+
+
+
+# Ignore the local database.
+db.sqlite3
+
+
+# Ignore the local secrets file.
+src/foo/secrets.py
+src/foo/secrets_template.py
+
+

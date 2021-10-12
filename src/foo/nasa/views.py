@@ -60,6 +60,9 @@ def photo_form(request):
                                           service_version=request.POST['service_version'])
 
                 photo.save()
+                form = PhotoOfDayForm()
+
+                return render(request, 'form.html', {'form': form})
 
     api = API(settings.NASA_API_SECRET)
     data_json = api.get_apod(date=datetime.today().strftime('%Y-%m-%d'))
@@ -78,14 +81,8 @@ def photo_form(request):
     return render(request, 'form.html', {'form':form})
 
 def photo_list(request):
-    # pods = models.PhotoOfDay.objects.all()
+    pods = models.PhotoOfDay.objects.all()
     return render(request, 'pod_list.html', {"pods":pods})
-
-class PhotoOfDayListView(ListView):
-    template_name = 'pod_list.html'
-    model = models.PhotoOfDay
-    context_object_name = 'pods'
-
 
 
 def determine_url(data_json):
