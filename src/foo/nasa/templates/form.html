@@ -1,0 +1,20 @@
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cache the Date</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Retreive Date" name="getdate01">
+    {{ form|crispy }}
+    <input type="submit" value="Cache Date" name="savedate01">
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cached Photos of the Day</title>
+</head>
+<body>
+    {% for pod in pods %}
+        <h3>{{ pod.photodate }}</h3>
+        {{ pod.title }}
+    {% endfor %}
+</body>
+</html>

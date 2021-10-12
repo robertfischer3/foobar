@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block "content" %}
+<div class="starter-template">
+<form action="/createpod/" method="post">
+    {% csrf_token %}
+    {{form.errors}}
+    <h1>{{title}}</h1>
+     <div class="form-group row">
+    <button type="submit">Cache Picture?</button>
+     </div>
+    <img src="{{ url }}" alt="Nasa picture of the day">
+    <p class="lead">{{ explanation }}</p>
+
+</form>
+</div>
+{% endblock "content" %}
